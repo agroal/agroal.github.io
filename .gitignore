@@ -1,0 +1,35 @@
+_drafts/
+_site/
+
+#OS X stuff
+.DS_Store
+# temp files
+*~
+*.swp
+/.gitk-tmp.*
+atlassian-ide-plugin.xml
+
+# ignore IDEA files
+*.iml
+*.ipr
+*.iws
+.idea
+
+# ignore Maven generated target folders
+/.m2
+~
+target
+
+# ignore eclipse files
+.project
+.classpath
+.settings
+.metadata
+.checkstyle
+.factorypath
+
+## Environment normalization:
+.env
+/.bundle
+/vendor/bundle
+/lib/bundler/man/

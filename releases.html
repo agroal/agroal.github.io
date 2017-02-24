@@ -1,0 +1,67 @@
+---
+layout: default
+---
+
+    <h1>
+        {% for header in site.headers %}
+        <a class="header" href="{{ header.url }}">{{ header.name }}</a>
+        {% endfor %}
+    </h1>
+    <ul class="posts">
+        {% for release in site.data.releases %}
+        <li class="posts"><span class="date">{{ release.date | date: "%Y %m %d" }}</span><a class="icon" href="{{ release.github }}"><span class="icon-github"></span></a><a class="icon" href="{{ release.jira }}"><span class="icon-bug"></span></a><a href="{{ release.announce }}">{{ release.name }}</a>
+        {% endfor %}
+    </ul>
+
+
+<div id="post">
+
+    If you are using maven the easiest would be to add this to your pom.xml:
+
+{% highlight xml %}
+<dependency>
+      <groupId>io.agroal</groupId>
+      <artifactId>agroal-api</artifactId>
+      <version>${version.io.agroal}</version>
+</dependency>
+<dependency>
+      <groupId>io.agroal</groupId>
+      <artifactId>agroal-pool</artifactId>
+      <version>${version.io.agroal}</version>
+      <scope>runtime</scope>
+</dependency>
+{% endhighlight %}
+
+    For gradle builds add the following dependency:
+
+{% highlight groovy %}
+dependencies {
+    compile group: 'io.agroal', name: 'agroal-api', version: '${version.io.agroal}'
+    runtime group: 'io.agroal', name: 'agroal-pool', version: '${version.io.agroal}'
+}
+{% endhighlight %}
+
+At the moment the releases are distributed throug the JBoss Releases maven repository. In maven, configure it this way:
+
+{% highlight xml %}
+<repositories>
+    <repository>
+        <id>jboss-public-repository-group</id>
+        <name>JBoss Public Repository Group</name>
+        <url>http://repository.jboss.org/nexus/content/groups/public/</url>
+    </repository>
+</repositories>
+{% endhighlight %}
+
+In gradle:
+
+{% highlight groovy %}
+repositories {
+    mavenCentral()
+    maven {
+        url "http://repository.jboss.org/nexus/content/groups/public/"
+    }
+}
+{% endhighlight %}
+
+</div>

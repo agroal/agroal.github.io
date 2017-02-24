@@ -1,0 +1,31 @@
+name: Agroal
+encoding: utf-8
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  highlighter: rouge
+###
+copyright: © 2017 <a href="https://www.redhat.com">RedHat Inc.</a>
+about: The natural database connection pool
+headers:
+    - name: News
+      url: index.html
+    - name: Releases
+      url: releases.html
+    - name: about
+      url: about.html
+urls:
+    - text: home
+      url: https://agroal.github.io
+      icon: icon-home
+    - text: github
+      url: https://github.com/agroal
+      icon: icon-github
+    - text: license
+      url: http://www.apache.org/licenses/LICENSE-2.0
+      icon: icon-library
+    - text: issues
+      url: https://issues.jboss.org/projects/AG
+      icon: icon-bug

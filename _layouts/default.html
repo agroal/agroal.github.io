@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% if page.title %} {{ page.title }} {% else %} {{ site.name }} {% endif %}</title>
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Icons -->
+    <!-- <link rel="stylesheet" href="{{ site.github.url }}/css/icon.css"> -->
+    <link rel="stylesheet" href="/css/icon.css">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+</head>
+<body>
+
+<div id="container">
+
+    <div class="left">
+        <h1>{{ site.name }}</h1>
+        <img id="logo" src="/img/agroal_logo.png" /><br/>
+
+        {% for i in site.urls %}
+        <a class="about" href="{{ i.url }}">{{ i.text }} &nbsp; <span class="{{ i.icon }}"></span></a><br/>
+        {% endfor %}
+
+        {% if site.about %}
+        <div id="about">
+            {{ site.about }}
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="right">
+
+        {{ content }}
+
+        <footer>
+            <span class="copyright">{{ site.copyright }}</span>
+            <span class="cc-license">
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                    <span class="icon-creative-commons"></span>
+                    <span class="icon-creative-commons-attribution"></span>
+                    CC BY 4.0
+                </a>
+            </span>
+        </footer>
+    </div>
+
+</div>
+
+</body>
+</html>
