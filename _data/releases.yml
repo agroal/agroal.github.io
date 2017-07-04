@@ -3,3 +3,9 @@
   announce: /release/announcement/2017/02/21/0.1-release.html
   github: https://github.com/agroal/agroal/releases/tag/0.1
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12333553
+
+- name: 0.2
+  date: 2017-07-04
+  announce: /release/announcement/2017/07/04/0.2-release.html
+  github: https://github.com/agroal/agroal/releases/tag/0.2
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12333816
