@@ -41,27 +41,6 @@ dependencies {
 }
 {% endhighlight %}
 
-At the moment the releases are distributed throug the JBoss Releases maven repository. In maven, configure it this way:
-
-{% highlight xml %}
-<repositories>
-    <repository>
-        <id>jboss-public-repository-group</id>
-        <name>JBoss Public Repository Group</name>
-        <url>http://repository.jboss.org/nexus/content/groups/public/</url>
-    </repository>
-</repositories>
-{% endhighlight %}
-
-In gradle:
-
-{% highlight groovy %}
-repositories {
-    mavenCentral()
-    maven {
-        url "http://repository.jboss.org/nexus/content/groups/public/"
-    }
-}
-{% endhighlight %}
+    The releases are distributed through Maven Central repository, so no extra configuration should be necessary.
 
 </div>
