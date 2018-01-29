@@ -30,17 +30,20 @@
 body {
   font-family: 'Overpass', Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5em;
   color: #424242;
+}
+p {
+    text-align: justify;
+    text-indent: 16px;
 }
 
 /* Font and link declarations */
 span.date {
   color: #ADADAD;
-  margin-bottom: 5px;
-  margin-right: 10px;
-  font-size: 12px;
-  vertical-align: middle;
+  font-size: 11px;
+  padding: 11px;
+  float: right;
+  font-family: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 h1 {
   font-weight: normal;
@@ -102,13 +105,13 @@ pre {
   color: #FFF;
   overflow-x: auto;
   font-family: 'Source Code Pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
-  font-size: 12px;
+  font-size: 13px;
 }
 div.content .highlight {
   background: #333333;
 }
 a.header {
-  padding-right: 24px;
+  padding-right: 32px;
   text-transform: uppercase;
 }
 a.icon {
@@ -123,21 +126,15 @@ div.right li.posts {
 }
 
 /* footer */
-footer {
-  border-top: 1px solid #E6E6E6;
-  width: 100%;
-  padding-top: 8px;
-  color: #C2C2C2;
+div.right footer {
   font-size: 12px;
-  padding-bottom: 16px;
 }
 footer span.cc-license {
   vertical-align: bottom;
   float: right;
 }
-
-/* right */
-div.right h1 {
+footer a {
+  color: #ADADAD;
 }
 div.right ul {
   list-style: none;
@@ -163,20 +160,21 @@ div.left {
   margin-top: 16px;
   margin-right: 16px;
 }
-div.left h1 {
+div.left h1#project {
+  color: #8C8C8C;
   text-transform: uppercase;
 }
 div.left img#logo {
 
   /* -webkit-border-radius: 200px; */
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
   margin-bottom: 16px;
 }
 div.left a.about {
   line-height: 2em;
 }
-div.left div#about {
+footer {
   margin-top: 16px;
   border-top: 1px solid #E6E6E6;
   padding-top: 16px;

@@ -22,7 +22,7 @@
 <div id="container">
 
     <div class="left">
-        <h1>{{ site.name }}</h1>
+        <h1 id="project"><a href="/">{{ site.name }}</a></h1>
         <img id="logo" src="/img/agroal_logo.png" /><br/>
 
         {% for i in site.urls %}
@@ -30,9 +30,9 @@
         {% endfor %}
 
         {% if site.about %}
-        <div id="about">
+        <footer>
             {{ site.about }}
-        </div>
+        </footer>
         {% endif %}
     </div>
 
