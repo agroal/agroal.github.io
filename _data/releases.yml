@@ -27,3 +27,15 @@
   announce: /release/announcement/2018/05/03/0.5-release.html
   github: https://github.com/agroal/agroal/releases/tag/0.5
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12336968
+
+- name: 1.0
+  date: 2018-05-25
+  announce: /release/announcement/2018/05/25/1.0-release.html
+  github: https://github.com/agroal/agroal/releases/tag/1.0
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12337546
+
+- name: 1.1
+  date: 2018-08-02
+  announce: /release/announcement/2018/08/02/1.1-release.html
+  github: https://github.com/agroal/agroal/releases/tag/1.1
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12337803
