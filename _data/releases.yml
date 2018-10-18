@@ -45,3 +45,9 @@
   announce: /release/announcement/2018/10/10/1.2-release.html
   github: https://github.com/agroal/agroal/releases/tag/1.2
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12338831
+
+- name: 1.3
+  date: 2018-10-17
+  announce: /release/announcement/2018/10/17/1.3-release.html
+  github: https://github.com/agroal/agroal/releases/tag/1.3
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12339460
