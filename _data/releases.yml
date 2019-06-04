@@ -57,3 +57,9 @@
   announce: /release/announcement/2019/02/05/1.4-release.html
   github: https://github.com/agroal/agroal/releases/tag/1.4
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12339575
+
+- name: 1.5
+  date: 2019-05-29
+  announce: /release/announcement/2019/05/29/1.5-release.html
+  github: https://github.com/agroal/agroal/releases/tag/1.5
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12340655
