@@ -15,9 +15,9 @@ headers:
     - name: Releases
       url: releases.html
     - name: Docs
-      url: docs.md
+      url: docs.html
     - name: About
-      url: about.md
+      url: about.html
 urls:
     - text: home
       url: https://agroal.github.io
