@@ -143,12 +143,12 @@ div.right ul {
 }
 div.right ul li {
   margin-top: 10px;
-  margin-left: 0;
+  margin-left: 30px;
   padding: 0;
 }
 div.right .post ul {
   list-style: square;
-  margin-left: 15px;
+  margin-left: 0px;
 }
 
 /* Left column aka nav bar formatting */
