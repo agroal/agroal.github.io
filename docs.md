@@ -3,7 +3,7 @@ layout: docs
 ---
 
 Agroal library allows the definition of `java.sql.DataSource` with connection pooling.
-This guide goes over what does Agroal provides and the configurations available in the library.
+This guide goes over what does Agroal provide and the configurations available in the library.
 
 ## The `AgroalDatasource` class
 
@@ -31,7 +31,7 @@ This a list of all the metrics exposed by `AgroalDataSource`. Agroal does not co
   * `flushCount()` - Number of connections removed from the pool, not counting invalid / idle.
   * `reapCount()` - Number of connections removed from the pool for being idle.
   * `destroyCount()` - Number of destroyed connections.
-  * `activeCount()` - Number active of connections. This connections are in use and not available to be acquired.
+  * `activeCount()` - Number active of connections. These connections are in use and not available to be acquired.
   * `maxUsedCount()` - Maximum number of connections active simultaneously.
   * `availableCount()` - Number of idle connections in the pool, available to be acquired.
   * `acquireCount()` - Number of times an acquire operation succeeded.
@@ -40,7 +40,11 @@ This a list of all the metrics exposed by `AgroalDataSource`. Agroal does not co
 
 ### AgroalDataSourceListener
 
-When creating an AgroalDataSource there can be specified listeners with callbacks that are invoked for most interesting moments of the connection life-cycle, as well as important events for the pool. Agroal does not do any logging by default, so any message it wants to communicate it does so using this interface. Things like leak detection are also notified on this interface. The tests for Agroal also rely heavily on this interface for understanding the operation of the pool. Keep in mind that this methods are supposed to be fast to execute and not block, as are called either from the thread acquiring a connection or Agroal own internal thread.
+When creating an AgroalDataSource there can be specified listeners with callbacks that are invoked for most interesting moments of the connection life-cycle, as well as important events for the pool. Agroal does not do any logging by default, so any message it wants to communicate it does so using this interface. Events like leak detection are also notified on this interface. The tests for Agroal also rely heavily on this interface for understanding the operation of the pool. Keep in mind that these methods are supposed to be fast to execute and not block, as are called either from the thread acquiring a connection or Agroal own internal thread.
+
+### AgroalPoolInterceptor
+
+Since 1.8 Agroal provides another mechanism to notify about pool events. While the listener is more geared towards integrators of Agroal, the interceptor is safe for higher level applications to use. Not only it's safe to execute operations on the connection, these are performed in the transaction and have safeguards for failures. 
 
 ## Configuration
 
@@ -53,7 +57,7 @@ Below is an exhaustive list of the available settings, split into three levels.
   There are two implementations, `AGROAL` is the default but there is also `HIKARI` which wraps the popular connection pool (it's used for testing purposes, as the Agroal API is not fully supported).
   Starting with 1.6 there is also `AGROAL_POOLLESS` specialized for the use case where connections are pooled outside Agroal. It can be seen as a pool where the min-size is zero and connections are flushed immediately on close.  
   
-  * `metricsEnabled(boolean)` - Whether or not to collect metrics. Metrics are not collected by default. This setting can be modified during runtime.
+  * `metricsEnabled(boolean)` - Whether to collect metrics. Metrics are not collect by default. This setting can be modified during runtime.
   
   * `connectionPoolConfiguration(AgroalConnectionPoolConfiguration)` - The configuration of the connection pool.
   
@@ -66,26 +70,26 @@ Below is an exhaustive list of the available settings, split into three levels.
   * `initialSize(int)` - The number of connections added to the pool when it is started. The default is zero and must not be negative. It's not required that is a value between min and max sizes. 
   
   * `minSize(int)` - The minimum number of connections present on the pool. The default is zero and must not be negative. Also, it has to be smaller than max.
-  This value can be changed during runtime, meaning that the actual number of connection in the pool may be smaller than the minimum for some periods of time. In those circumstances Agroal chooses to create new connections instead of handing the ones already pooled. 
+  This value can be changed during runtime, meaning the actual number of connection in the pool may be smaller than the minimum for some periods of time. In those circumstances Agroal chooses to create new connections instead of handing the ones already pooled. 
 
   * `maxSize(int)` - The maximum number of connections present on the pool. This is a required value that must not be negative. 
-  This value can be changed during runtime, meaning that the actual number of connections on the pool can be greater than the maximum for some periods of time. In those circumstances Agroal does flush connections as soon as they are returned to the pool.  
+  This value can be changed during runtime, meaning the actual number of connections on the pool can be greater than the maximum for some periods of time. In those circumstances Agroal does flush connections as soon as they are returned to the pool.  
 
   * `connectionValidator(ConnectionValidator)` - The method to use for connection validation. This allows for customization of the validation process. By default, connections are always considered as valid.
   
   * `exceptionSorter(ExceptionSorter)` - This extension point tells Agroal which exceptions indicate that the connection is in an invalid state and should be removed from the pool. Agroal provides a few implementations of the `ExceptionSorter` interface for selected databases. By default, no exception is considered fatal. 
   
-  * `acquisitionTimeout(Duration)` - The maximum amount of time a thread can wait for a connection, after which an exception is thrown instead. The default is zero, meaning that a thread will wait indefinitely. This property can be changed during runtime.
+  * `acquisitionTimeout(Duration)` - The maximum amount of time a thread can wait for a connection, after which an exception is thrown instead. The default is zero, meaning a thread will wait indefinitely. This property can be changed during runtime.
  
   * `idleValidationTimeout(Duration)` - A foreground validation is executed if a connection has been idle on the pool for longer than this duration. The default is zero, meaning that foreground validation is not performed.
   
-  * `leakTimeout(Duration)` - The duration of time that a connection can be held without causing a leak to be reported. The default is zero, meaning that Agroal does not check for connection leaks.
+  * `leakTimeout(Duration)` - The duration of time a connection can be held without causing a leak to be reported. The default is zero, meaning that Agroal does not check for connection leaks.
   
-  * `validationTimeout(Duration)` - The interval between background validation checks. The default is zero, meaning that background validation is not performed.
+  * `validationTimeout(Duration)` - The interval between background validation checks. The default is zero, meaning background validation is not performed.
   
-  * `reapTimeout(Duration)` - The duration for eviction of idle connections. The default is zero, meaning that connections are never considered to be idle.
+  * `reapTimeout(Duration)` - The duration for eviction of idle connections. The default is zero, meaning connections are never considered to be idle.
   
-  * `maxLifetime(Duration)` - The maximum amount of time a connection can live, after which it is removed from the pool. The default is zero, meaning that this feature is disabled.
+  * `maxLifetime(Duration)` - The maximum amount of time a connection can live, after which it is removed from the pool. The default is zero, meaning this feature is disabled.
   
   * `connectionFactoryConfiguration(AgroalConnectionFactoryConfiguration)` - The configuration of the connection factory, used to create new connections.
   
