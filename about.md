@@ -2,4 +2,4 @@
 layout: docs
 ---
 
-Agroal is a datasource connection pool implementation with integration with transaction, security and other systems.
+Agroal is a advanced datasource connection pool implementation with integration with transaction and security.

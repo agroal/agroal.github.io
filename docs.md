@@ -95,6 +95,12 @@ Below is an exhaustive list of the available settings, split into three levels.
 
   * `maxLifetime(Duration)` - The maximum amount of time a connection can live, after which it is removed from the pool. The default is zero, meaning this feature is disabled.
 
+  * `enhancedLeakReport(boolean)` - Provides detailed insights of the connection status when it's reported as a leak (as INFO messages on AgroalDataSourceListener). Added on 1.10 and not enabled by default.
+
+  * `multipleAcquisition(MultipleAcquisitionAction)` - Behaviour when a thread tries to acquire multiple connections. Default is to allow, can also warn or throw exception. This setting was added on 1.10.
+
+  * `transactionRequirement(TransactionRequirement)` - Requirement for enlisting connection with running transaction. The default is to not require enlistment, can also warn or throw exception. This setting was added on 1.10.    
+
   * `connectionFactoryConfiguration(AgroalConnectionFactoryConfiguration)` - The configuration of the connection factory, used to create new connections.
 
 ### ConnectionFactoryConfiguration

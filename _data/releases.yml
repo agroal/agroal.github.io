@@ -87,3 +87,15 @@
   announce: /release/announcement/2020/10/14/1.9-release.html
   github: https://github.com/agroal/agroal/releases/tag/1.9
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12345872
+
+- name: 1.10
+  date: 2021-03-22
+  announce: /release/announcement/2021/03/22/1.10-release.html
+  github: https://github.com/agroal/agroal/releases/tag/1.10
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12353998
+
+- name: 1.11
+  date: 2021-04-06
+  announce: /release/announcement/2021/04/06/1.11-release.html
+  github: https://github.com/agroal/agroal/releases/tag/1.11
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12355534
