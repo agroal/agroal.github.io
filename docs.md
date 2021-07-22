@@ -69,7 +69,7 @@ Below is an exhaustive list of the available settings, split into three levels.
 
   * `transactionIntegration(TransactionIntegration)` - Specifies the integration point with transaction systems. This integration can change how and when connections move in and out of the pool. See the chapter on transactions for more information.
            
-  * `connectionCache(ConnectionCache)` - Allows a custom strategy for a local connection cache. Some basic implementations are provided by Agroal and the default is `single`.
+  * `connectionCache(ConnectionCache)` - This setting was added in 1.12 and allows a custom strategy for a local connection cache. Some basic implementations are provided by Agroal and the default is `single`.
 
   * `flushOnClose(boolean)` - This setting was added in 1.6 and allows for connections to be flushed upon return to the pool. It's not enabled by default.  
 
