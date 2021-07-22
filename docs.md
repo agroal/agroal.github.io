@@ -22,7 +22,7 @@ The added methods are the following:
 
 ### Metrics
 
-This a list of all the metrics exposed by `AgroalDataSource`. Agroal does not collect metrics by default due to the impact it has on runtime performance, but it can be enable at any time.
+This a list of all the metrics exposed by `AgroalDataSource`. Agroal does not collect metrics by default due to the impact it has on runtime performance, but it can be enabled at any time.
 
   * `creationCount()` - Number of created connections.
   * `creationTimeAverage()` `creationTimeMax()` `creationTimeTotal()` - Statistics of connection creation duration.
@@ -68,6 +68,8 @@ Below is an exhaustive list of the available settings, split into three levels.
 ### ConnectionPoolConfiguration
 
   * `transactionIntegration(TransactionIntegration)` - Specifies the integration point with transaction systems. This integration can change how and when connections move in and out of the pool. See the chapter on transactions for more information.
+           
+  * `connectionCache(ConnectionCache)` - Allows a custom strategy for a local connection cache. Some basic implementations are provided by Agroal and the default is `single`.
 
   * `flushOnClose(boolean)` - This setting was added in 1.6 and allows for connections to be flushed upon return to the pool. It's not enabled by default.  
 
