@@ -13,6 +13,7 @@ The added methods are the following:
   * `getConfiguration()` - Allows retrieving the current datasource configuration and modify the read-write attributes.
   * `getMetrics()` - Allows retrieving metrics and statistics from the connection pool. The datasource has to have metrics enabled in order for those to be collected. Please refer to the metrics section for details on what is collected.
   * `close()` - `AgroalDataSource` implements the `java.lang.AutoClosable` interface so that it can be used in try-with-resources constructs.
+  * `isHealthy(boolean)` Since 1.13 this method checks the health of the data source by performing validation on one of the connections or the pool, or by establishing a new connection. In the latter case, the number of connections on the pool can go over max-size.
   * `flush()` - Allows removal of connections from the pool. There are several modes for this operation, that determine what and when connections are removed from the pool. These are:
     * `ALL` - Causes all connections to be flushed immediately. Connections handed to applications are immediately closed.
     * `GRACEFUL` - Connections on the pool are flushed immediately and connections handed to applications are flushed as soon as they are returned to the pool.
@@ -131,6 +132,6 @@ Below is an exhaustive list of the available settings, split into three levels.
 
   * `recoveryPrincipal(Principal)` - Allows setting a different principal for recovery connections. Since version 1.2.
 
-  * ` recoveryCredential(Object)` - Allows setting different credentials for recovery connections. Since version 1.2.
+  * `recoveryCredential(Object)` - Allows setting different credentials for recovery connections. Since version 1.2.
 
   * `jdbcProperty(String, String)` - Allows setting other properties to be passed to the JDBC driver when creating new connections. NOTE: username and password properties are not allowed, these have to be set using the principal / credentials mechanism.
