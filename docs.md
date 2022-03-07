@@ -49,7 +49,7 @@ Since 1.8 Agroal provides another mechanism to notify about pool events. While t
 
 ### Spring Boot starter
 
-Since 1.9 Agroal can be easily chosen as the connection pool in Spring Boot projects. For that, just add `agroal-spring-boot-starter` as a dependency to your project and configure it with `spring.datasource.agroal.*` keys.
+Since 1.9 Agroal can be easily chosen as the connection pool in Spring Boot projects. For that, just add `agroal-spring-boot-starter` as a dependency to your project and configure it with `spring.datasource.agroal.*` keys. Additionally, this can be enforced by specifying `spring.datasource.type=io.agroal.springframework.boot.AgroalDataSource`.
 
 ## Configuration
 
