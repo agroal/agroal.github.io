@@ -123,3 +123,9 @@
   announce: /release/announcement/2022/03/02/1.15-release.html
   github: https://github.com/agroal/agroal/releases/tag/1.15
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12382827
+
+- name: 1.16
+  date: 2022-03-29
+  announce: /release/announcement/2022/03/29/1.16-release.html
+  github: https://github.com/agroal/agroal/releases/tag/1.16
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12383751

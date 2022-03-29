@@ -86,7 +86,7 @@ Below is an exhaustive list of the available settings, split into three levels.
 
   * `exceptionSorter(ExceptionSorter)` - This extension point tells Agroal which exceptions indicate that the connection is in an invalid state and should be removed from the pool. Agroal provides a few implementations of the `ExceptionSorter` interface for selected databases. By default, no exception is considered fatal.
 
-  * `acquisitionTimeout(Duration)` - The maximum amount of time a thread can wait for a connection, after which an exception is thrown instead. The default is zero, meaning a thread will wait indefinitely. This property can be changed during runtime.
+  * `acquisitionTimeout(Duration)` - The maximum amount of time a thread can wait for a connection, after which an exception is thrown instead. See also the `loginTimeout` setting. The default is zero, meaning a thread will wait indefinitely. This property can be changed during runtime.
 
   * `idleValidationTimeout(Duration)` - A foreground validation is executed if a connection has been idle on the pool for longer than this duration. The default is zero, meaning that foreground validation is not performed.
 
@@ -111,6 +111,8 @@ Below is an exhaustive list of the available settings, split into three levels.
   * `autoCommit(boolean)` - The value of the auto-commit property on the connection. Default is true.
 
   * `trackJdbcResources(boolean)` - Since 1.6 this setting allows for disabling the tracking of JDBC resources (`Statement` and `ResultSet`) which is enabled by default. These resources are tracked so that they are closed when the connection returns to the pool, thus preventing any leaks.
+               
+  * `loginTimeout(Duration)` - Since 1.16 this setting allows a timeout when attempting to establish a new connection. Because of limitations on the JDBC API, the resolution of this property is in seconds. A thread wanting to get a connection in pool-less mode may need to wait for this timeout in addition to the acquisition timeout. For regular pool operation both timeouts are concurrent and therefore is suggested that the acquisition timeout should be longer than the login timeout. The default value is zero, and that waits indefinitely. 
 
   * `jdbcUrl(String)` - The database URL to connect to. The default is the empty string.
 

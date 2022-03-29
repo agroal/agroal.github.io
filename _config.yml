@@ -1,13 +1,13 @@
 name: Agroal
-encoding: utf-8
+encoding: UTF-8
 markdown: kramdown
 kramdown:
   input: GFM
   auto_ids: true
   hard_wrap: false
-  highlighter: rouge
+  syntax_highlighter: rouge
 ###
-copyright: © 2017 <a href="https://www.redhat.com">RedHat Inc.</a>
+copyright: © 2017/2022 <a href="https://www.redhat.com">RedHat Inc.</a>
 about: The natural database connection pool
 headers:
     - name: News
