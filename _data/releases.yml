@@ -131,20 +131,32 @@
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12383751
 
 - name: 1.17
-  date: 2022-03-07
+  date: 2023-03-07
   announce: /release/announcement/2023/03/07/2.1-release.html
   github: https://github.com/agroal/agroal/releases/tag/1.17
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12396764
 
+- name: 1.18
+  date: 2023-05-26
+  announce: /release/announcement/2023/05/26/2.2-release.html
+  github: https://github.com/agroal/agroal/releases/tag/1.18
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12408670
+
 
 - name: 2.0
   date: 2022-04-25
-  announce: /release/announcement/2022/04/25/1.0-release.html
+  announce: /release/announcement/2022/04/25/2.0-release.html
   github: https://github.com/agroal/agroal/releases/tag/2.0
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12385431
 
 - name: 2.1
-  date: 2022-03-07
+  date: 2023-03-07
   announce: /release/announcement/2023/03/07/2.1-release.html
   github: https://github.com/agroal/agroal/releases/tag/2.1
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12396763
+
+- name: 2.2
+  date: 2023-03-07
+  announce: /release/announcement/2023/03/26/2.2-release.html
+  github: https://github.com/agroal/agroal/releases/tag/2.2
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12408669
