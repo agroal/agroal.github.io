@@ -156,7 +156,13 @@
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12396763
 
 - name: 2.2
-  date: 2023-03-07
+  date: 2023-03-26
   announce: /release/announcement/2023/03/26/2.2-release.html
   github: https://github.com/agroal/agroal/releases/tag/2.2
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12408669
+
+- name: 2.3
+  date: 2024-02-09
+  announce: /release/announcement/2024/02/09/2.3-release.html
+  github: https://github.com/agroal/agroal/releases/tag/2.3
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12409779

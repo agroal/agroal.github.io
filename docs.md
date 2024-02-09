@@ -90,6 +90,8 @@ Below is an exhaustive list of the available settings, split into three levels.
 
   * `idleValidationTimeout(Duration)` - A foreground validation is executed if a connection has been idle on the pool for longer than this duration. The default is zero, meaning that foreground validation is not performed.
 
+  * `validateOnBorrow(boolean)` - Since 2.3 this setting allows connection validation prior to acquisition (foreground validation) overriding any idle timeout. Because of the overhead of performing validation on every call, it's recommended to rely on idle validation instead.
+
   * `leakTimeout(Duration)` - The duration of time a connection can be held without causing a leak to be reported. The default is zero, meaning that Agroal does not check for connection leaks.
 
   * `validationTimeout(Duration)` - The interval between background validation checks. The default is zero, meaning background validation is not performed.
@@ -137,3 +139,5 @@ Below is an exhaustive list of the available settings, split into three levels.
   * `recoveryCredential(Object)` - Allows setting different credentials for recovery connections. Since version 1.2.
 
   * `jdbcProperty(String, String)` - Allows setting other properties to be passed to the JDBC driver when creating new connections. NOTE: username and password properties are not allowed, these have to be set using the principal / credentials mechanism.
+       
+  * `xaProperty(String, String)` - Since 2.3 this setting allows to have a different set of properties for an XA diver. If empty, the regular `jdbcProperty` are used for both XA and non-XA.
