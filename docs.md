@@ -1,8 +1,4 @@
----
-layout: docs
----
-
-Agroal library allows the definition of `javax.sql.DataSource` with connection pooling.
+# Agroal library allows the definition of `javax.sql.DataSource` with connection pooling.
 This guide goes over what does Agroal provide and the configurations available in the library.
 
 ## The `AgroalDatasource` class
