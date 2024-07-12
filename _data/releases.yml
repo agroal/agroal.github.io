@@ -172,3 +172,9 @@
   announce: /release/announcement/2024/05/22/2.4-release.html
   github: https://github.com/agroal/agroal/releases/tag/2.4
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12428473
+
+- name: 2.5
+  date: 2024-07-12
+  announce: /release/announcement/2024/07/12/2.5-release.html
+  github: https://github.com/agroal/agroal/releases/tag/2.5
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12430265
