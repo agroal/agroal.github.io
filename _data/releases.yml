@@ -178,3 +178,9 @@
   announce: /release/announcement/2024/07/12/2.5-release.html
   github: https://github.com/agroal/agroal/releases/tag/2.5
   jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12430265
+
+- name: 2.6
+  date: 2025-03-28
+  announce: /release/announcement/2025/03/28/2.6-release.html
+  github: https://github.com/agroal/agroal/releases/tag/2.6
+  jira: https://issues.jboss.org/secure/ReleaseNote.jspa?projectId=12318922&version=12449528
