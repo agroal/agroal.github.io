@@ -49,7 +49,7 @@ Since 1.8 Agroal provides another mechanism to notify about pool events. While t
 
 ### Spring Boot starter
 
-Since 1.9 Agroal can be easily chosen as the connection pool in Spring Boot projects. For that, just add `agroal-spring-boot-starter` as a dependency to your project and configure it with `spring.datasource.agroal.*` keys. Additionally, this can be enforced by specifying `spring.datasource.type=io.agroal.springframework.boot.AgroalDataSource`.
+Since 1.9 Agroal can be easily chosen as the connection pool in Spring Boot projects. For that, just add `agroal-spring-boot-starter` as a dependency to your project and configure it with `spring.datasource.agroal.*` keys. Additionally, this can be enforced by specifying `spring.datasource.type=io.agroal.springframework.boot.AgroalDataSource`. Agroal 3.0 adds support for Spring Boot 4.0.
 
 ## Configuration
 
@@ -59,7 +59,7 @@ Below is an exhaustive list of the available settings, split into three levels.
 ### DataSourceConfiguration
 
   * `dataSourceImplementation(DataSourceImplementation)` - Actual AgroalDataSource implementation. This allows flexibility to have different implementations of the Agroal API.
-  There are two implementations, `AGROAL` is the default but there is also `HIKARI` which wraps the popular connection pool (it's used for testing purposes, as the Agroal API is not fully supported).
+  There are two implementations, `AGROAL` is the default.
   Starting with 1.6 there is also `AGROAL_POOLLESS` specialized for the use case where connections are pooled outside Agroal. It can be seen as a pool where the min-size is zero and connections are flushed immediately on close.  
 
   * `metricsEnabled(boolean)` - Whether to collect metrics. Metrics are not collect by default. This setting can be modified during runtime.
@@ -98,7 +98,7 @@ Below is an exhaustive list of the available settings, split into three levels.
 
   * `reapTimeout(Duration)` - The duration for eviction of idle connections. The default is zero, meaning connections are never considered to be idle.
 
-  * `maxLifetime(Duration)` - The maximum amount of time a connection can live, after which it is removed from the pool. The default is zero, meaning this feature is disabled.
+  * `maxLifetime(Duration)` - Amount of time a connection can live, after which it is removed gracefully from the pool. The default is zero, meaning this feature is disabled.
 
   * `enhancedLeakReport(boolean)` - Provides detailed insights of the connection status when it's reported as a leak (as INFO messages on AgroalDataSourceListener). Added on 1.10 and not enabled by default.
 
