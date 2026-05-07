@@ -38,6 +38,7 @@ This a list of all the metrics exposed by `AgroalDataSource`. Agroal does not co
   * `acquireCount()` - Number of times an acquire operation succeeded.
   * `blockingTimeAverage()` `blockingTimeMax()` `blockingTimeAverage()` - Statistics for duration of blocked threads waiting for a connection.
   * `awaitingCount()` - Approximate number of threads blocked, waiting to acquire a connection.
+  * `heldCount()` - Number of active connections that have been held over commit. (since 3.1)
 
 ### AgroalDataSourceListener
 
@@ -104,9 +105,11 @@ Below is an exhaustive list of the available settings, split into three levels.
 
   * `multipleAcquisition(MultipleAcquisitionAction)` - Behaviour when a thread tries to acquire multiple connections. Default is to allow, can also warn or throw exception. This setting was added on 1.10.
 
-  * `transactionRequirement(TransactionRequirement)` - Requirement for enlisting connection with running transaction. The default is to not require enlistment, can also warn or throw exception. This setting was added on 1.10.    
+  * `transactionRequirement(TransactionRequirement)` - Requirement for enlisting connection with running transaction. The default is to not require enlistment (lenient), can also warn or throw exception. This setting was added on 1.10.    
 
   * `connectionFactoryConfiguration(AgroalConnectionFactoryConfiguration)` - The configuration of the connection factory, used to create new connections.
+
+  * `establishmentRetryAttempts(int)` and `establishmentRetryInterval(Duration)` - Configures the retries on connection establishment. The default is to do one retry after 1 second. These settings were added on 3.1.
 
 ### ConnectionFactoryConfiguration
 
@@ -141,3 +144,5 @@ Below is an exhaustive list of the available settings, split into three levels.
   * `jdbcProperty(String, String)` - Allows setting other properties to be passed to the JDBC driver when creating new connections. NOTE: username and password properties are not allowed, these have to be set using the principal / credentials mechanism.
        
   * `xaProperty(String, String)` - Since 2.3 this setting allows to have a different set of properties for an XA diver. If empty, the regular `jdbcProperty` are used for both XA and non-XA.
+
+  * `networkTimeout(Duration)` - Since 3.1, and like defined in java.sql.Connection#setNetworkTimeout, the maximum time to wait while performing database calls. the resolution is milliseconds.
