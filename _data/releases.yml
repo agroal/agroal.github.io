@@ -238,3 +238,9 @@
   announce: /release/announcement/2026/05/07/3.1-release.html
   github: https://github.com/agroal/agroal/releases/tag/3.1.1
   jira: https://redhat.atlassian.net/projects/AG/versions/105983
+
+- name: "3.1.2"
+  date: 2026-05-15
+  announce: /release/announcement/2026/05/07/3.1-release.html
+  github: https://github.com/agroal/agroal/releases/tag/3.1.2
+  jira: https://redhat.atlassian.net/projects/AG/versions/105988
