@@ -111,6 +111,8 @@ Below is an exhaustive list of the available settings, split into three levels.
 
   * `establishmentRetryAttempts(int)` and `establishmentRetryInterval(Duration)` - Configures the retries on connection establishment. The default is to do one retry after 1 second. These settings were added on 3.1.
 
+  * `validationFailureFlushThreshold` - The number of connections that must fail background validation in the same validation run for the whole pool to be flushed. A value of 0 disables fast pool flush, each connection is validated. Default is 1, i.e. the pool is flushed on the first failed validation. This setting was added on 3.3.
+
 ### ConnectionFactoryConfiguration
 
   * `autoCommit(boolean)` - The value of the auto-commit property on the connection. Default is true.
